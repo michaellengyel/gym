@@ -1,5 +1,4 @@
 from environment import Environment
-import cv2
 import random
 
 
@@ -13,6 +12,7 @@ def main():
                       food_spawn_threshold=100,
                       percent_for_game_over=10,
                       steps_for_game_over=100,
+                      wait_key=100,
                       render=True)
 
     # Reset Environment
@@ -24,8 +24,6 @@ def main():
         # Render map and sub-map
         env.render_map()
         env.render_sub_map()
-
-        cv2.waitKey(30)
 
         # Generate a random number 0-7
         action = random.randrange(0, 8)

@@ -13,6 +13,7 @@ def main():
                       food_spawn_threshold=100,
                       percent_for_game_over=10,
                       steps_for_game_over=100,
+                      wait_key=1,
                       render=True)
 
     # Reset Environment

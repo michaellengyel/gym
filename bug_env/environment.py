@@ -6,11 +6,12 @@ import numpy as np
 class Environment:
 
     # Initialize environment and sets agent to random location (s0, a0)
-    def __init__(self, map_img_path, fov, food_spawn_threshold, percent_for_game_over, steps_for_game_over, render=True):
+    def __init__(self, map_img_path, fov, food_spawn_threshold, percent_for_game_over, steps_for_game_over, wait_key=1, render=True):
         # Private input variables
         self.map_img_path = map_img_path
         self.fov = fov
         self.food_spawn_threshold = food_spawn_threshold
+        self.wait_key = wait_key
         self.render = render
 
         # Private variables
@@ -130,7 +131,7 @@ class Environment:
     def render_sub_map(self):
         if self.render:
             cv2.imshow('SUBMAP', self.sub_map_img)
-            cv2.waitKey(1)
+            cv2.waitKey(self.wait_key)
 
     '''Environment Logic Functions'''
 
