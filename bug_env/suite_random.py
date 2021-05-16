@@ -8,7 +8,12 @@ def main():
     print("Random Testing Suite Started...")
 
     # Create Environment
-    env = Environment("res/map_small.jpg", 15, 100, 10, 100, render=True)
+    env = Environment(map_img_path="res/map_small.jpg",
+                      fov=15,
+                      food_spawn_threshold=100,
+                      percent_for_game_over=10,
+                      steps_for_game_over=100,
+                      render=True)
 
     # Reset Environment
     env.reset()
