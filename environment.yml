@@ -1,0 +1,8 @@
+name: gym
+channels:
+  - conda-forge
+dependencies:
+  - opencv
+  - numpy
+  - matplotlib
+  - pandas
