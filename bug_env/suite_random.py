@@ -8,7 +8,7 @@ def main():
     print("Random Testing Suite Started...")
 
     # Create Environment
-    env = Environment("data/map_small.jpg", 15, 100, 10, 100)
+    env = Environment("res/map_small.jpg", 15, 100, 10, 100, render=True)
 
     # Reset Environment
     env.reset()
@@ -20,7 +20,7 @@ def main():
         env.render_map()
         env.render_sub_map()
 
-        cv2.waitKey(1)
+        cv2.waitKey(30)
 
         # Generate a random number 0-7
         action = random.randrange(0, 8)

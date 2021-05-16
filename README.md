@@ -12,7 +12,7 @@ From the cloned repository, run the following commands in the terminal:
 $ conda env create -f environment.yml  
 $ conda activate gym_env
 
-If using pycharm, set the interpreter to the python version in the created conda env e.g:  
+If using pycharm, set the interpreter to the python version in the created conda env e.g:
 
 .../anaconda3/envs/gym_env/bin/python
 

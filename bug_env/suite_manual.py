@@ -8,7 +8,7 @@ def main():
     print("Use Keys W, A, D, X(Y), Q, R, Z, C to navigate.")
 
     # Create Environment
-    env = Environment("data/map_small_edge.jpg", 15, 100, 10, 1000)
+    env = Environment("../res/map_small.jpg", 15, 100, 10, 1000, render=True)
 
     # Reset Environment
     env.reset()

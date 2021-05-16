@@ -6,11 +6,12 @@ import numpy as np
 class Environment:
 
     # Initialize environment and sets agent to random location (s0, a0)
-    def __init__(self, map_img_path, fov, food_spawn_threshold, percent_for_game_over, steps_for_game_over):
+    def __init__(self, map_img_path, fov, food_spawn_threshold, percent_for_game_over, steps_for_game_over, render=True):
         # Private input variables
         self.map_img_path = map_img_path
         self.fov = fov
         self.food_spawn_threshold = food_spawn_threshold
+        self.render = render
 
         # Private variables
         self.offset = int((self.fov - 1) / 2)
@@ -34,10 +35,11 @@ class Environment:
         self.init_map()  # s0
         self.init_agent_pos()  # a0
 
-        cv2.namedWindow('MAP', cv2.WINDOW_NORMAL)
-        cv2.resizeWindow('MAP', 900, 900)
-        cv2.namedWindow('SUBMAP', cv2.WINDOW_NORMAL)
-        cv2.resizeWindow('SUBMAP', 400, 400)
+        if self.render:
+            cv2.namedWindow('MAP', cv2.WINDOW_NORMAL)
+            cv2.resizeWindow('MAP', 900, 900)
+            cv2.namedWindow('SUBMAP', cv2.WINDOW_NORMAL)
+            cv2.resizeWindow('SUBMAP', 400, 400)
 
     '''Environment Initialization Functions'''
 
@@ -120,13 +122,15 @@ class Environment:
     '''GUI Render Functions'''
 
     def render_map(self):
-        cv2.imshow('MAP', self.map_img_agents)
-        cv2.waitKey(100)
+        if self.render:
+            cv2.imshow('MAP', self.map_img_agents)
+            cv2.waitKey(1)
 
     # Render the map of the environment each tick
     def render_sub_map(self):
-        cv2.imshow('SUBMAP', self.sub_map_img)
-        cv2.waitKey(1)
+        if self.render:
+            cv2.imshow('SUBMAP', self.sub_map_img)
+            cv2.waitKey(1)
 
     '''Environment Logic Functions'''
 
